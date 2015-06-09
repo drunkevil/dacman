@@ -27,39 +27,16 @@ imglogo:
 favicon: img/yan.ico   ## size:32px*32px,`.ico` is recommended,please put image into the theme folder `/jacman/source/img`.     
 rss_img: img/rss.png ## size:1920px*200px+. Banner Picture
 
-### Theme Color 
-theme_color:
-    theme: '#2ca6cb'    ##the defaut theme color is blue
-
 #### index post is expanding or not 
 index:
   expand: true           ## default is unexpanding,so you can only see the short description of each post.
   excerpt_link: 继续阅读»  
-  
 
-
-#### Toc
-toc:
-  article: false   ## show contents in article.
-  aside: false     ## show contents in aside.
-## you can set both of the value to true of neither of them.
-## if you don't want display contents in a specified post,you can modify `front-matter` and add `toc: false`.
 
 #### Links
 links:
-  土木坛子: https://tumutanzi.com
-  勺子歪歪: https://chenghouwen.com/
-  路易大叔: http://louishan.com/
-  博客大全: http://bkdq.org/
-  尚磊博客: http://shanglei.net/
-  BlogWeGo: http://blogwego.com/
-  戴睿可: http://cn.derekyang.us/
   阮一峰: http://www.ruanyifeng.com/blog/
-  兔二爷: https://too2ye.com/
-  王语双: http://wys.me/
-  宗志远: http://blog.sciencenet.cn/u/jiangnanlong
-  毕业生: http://todayby.com/
-  破襪子: http://pewae.com/
+
 
 
   
