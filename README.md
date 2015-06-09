@@ -1,7 +1,5 @@
 # Dacman
 
-[README](/README.md)
-
 Dacman 是为 [Hexo](http://hexo.io) 设计的一款清新且具有响应式的主题，拥有更丰富的特性并支持了很多的国内服务。Dacman 始于 [Jacman](https://github.com/wuchong/jacman) 修改而来。
 
 **Dacman 现已支持 Hexo 3.0 !**
@@ -12,7 +10,7 @@ Dacman 是为 [Hexo](http://hexo.io) 设计的一款清新且具有响应式的�
 ##安装教程
 ###安装
 ```
-$ git clone https://github.com/wuchong/jacman.git themes/jacman
+$ git clone https://github.com/drunkevil/dacman themes/jacman
 ```
 
 **Jacman 需要 Hexo 2.7 及以上版本** 
