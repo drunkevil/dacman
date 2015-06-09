@@ -8,7 +8,7 @@ Dacman 是为 [Hexo](http://hexo.io) 设计的一款清新且具有响应式的�
 ##安装教程
 ###安装
 ```
-$ git clone https://github.com/drunkevil/dacman themes/jacman
+$ git clone https://github.com/drunkevil/dacman themes/dacman
 ```
 
 ###启用
@@ -27,13 +27,13 @@ git pull origin master
 
 ##功能介绍
 - **菜单**  
- 主导航菜单
+ 主导航菜单包括：首页、归档、关于、订阅和搜索。
 - **边栏**  
  侧边栏包括：分类、友情链接。
 - **评论**  
  支持 [多说](http://duoshuo.com/) & [disqus](https://disqus.com/) 评论。
 - **分享**  
- 启用[JiaThis](http://www.jiathis.com/) 分享系统。
+ 采用[JiaThis](http://www.jiathis.com/) 分享系统。
 - **网站统计**  
  支持 [谷歌统计](http://www.google.com/analytics/) & [百度统计](http://tongji.baidu.com/) & [CNZZ站长统计](http://www.cnzz.com/)。
 - **站内搜索**  
