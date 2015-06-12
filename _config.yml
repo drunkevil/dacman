@@ -54,7 +54,7 @@ jiathis:
 #### Analytics
 google_analytics:
   enable: true
-  id: UA-59108758-1      ## e.g. UA-46321946-2 your google analytics ID.
+  id:       ## e.g. UA-46321946-2 your google analytics ID.
   site: drunkevil.com     ## e.g. wuchong.me your google analytics site or set the value as auto.
 ## You MUST upgrade to Universal Analytics first!
 ## https://developers.google.com/analytics/devguides/collection/upgrade/?hl=zh_CN
