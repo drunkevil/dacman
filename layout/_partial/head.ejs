@@ -6,7 +6,7 @@
   var title = page.title;
 
   if (is_archive()){
-    title = 'Archives';
+    title = '归档';
 
     if (is_month()){
       title += ': ' + page.year + '/' + page.month;
@@ -14,26 +14,18 @@
       title += ': ' + page.year;
     }
   } else if (is_category()){
-    title = 'Category: ' + page.category;
+    title = '分类: ' + page.category;
   } else if (is_tag()){
-    title = 'Tag: ' + page.tag;
+    title = '标签: ' + page.tag;
   }
   %>
-    <title><% if (title){ %><%= title %> | <% } %><%= "drunkevil - 闫志伟的网络日志" %></title>
-    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
-    <% if (config.author){ %>
-    <meta name="author" content="<%= config.author %>">
-    <% } %>
+  <title><% if (title){ %><%= title %> | <% } %><%= "drunkevil - 闫志伟的个人日志" %></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+  <meta name="generator" content="Hexo" />
+  <% if (config.author){ %><meta name="author" content="<%= config.author %>"><% } %>
+  <% if (page.keywords){ %><meta name="keywords" content="<%= page.keywords %>"><% } %>
+  <% if (theme.rss){ %><link rel="alternative" href="<%- theme.rss %>" title="<%= config.title %>" type="application/atom+xml"><% } %>
+  <% if (theme.favicon){ %><link rel="icon" href="<%- config.root %><%- theme.favicon %>"><% } %>
+  <%- css('css/style') %>
 
-    <% if (page.keywords){ %><meta name="keywords" content="<%= page.keywords %>"><% } %>
-    <%- open_graph({twitter_id: theme.author.twitter, google_plus: theme.author.google_plus}) %>
-
-    <% if (theme.rss){ %>
-    <link rel="alternative" href="<%- theme.rss %>" title="<%= config.title %>" type="application/atom+xml">
-    <% } %>
-    <% if (theme.favicon){ %>
-    <link rel="icon" href="<%- config.root %><%- theme.favicon %>">
-    <% } %>
-    
-    <%- css('css/style') %>
 </head>

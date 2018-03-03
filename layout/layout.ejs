@@ -1,9 +1,6 @@
 <% if (page.layout=='post' || page.layout=='photo'){ %>
  <%- partial('_partial/head') %>
   <body>
-    <header>
-      <%- partial('_partial/header') %>
-    </header>
     <div id="container">
       <%- body %>
     </div>
@@ -11,13 +8,11 @@
     <%- partial('_partial/after_footer') %>
   </body>
 </html>
+
 <% } else if(page.layout=='page'){ %>
   <% if(page.source.match(/\.md$/)){ %>
     <%- partial('_partial/head') %>
       <body>
-        <header>
-          <%- partial('_partial/header') %>
-        </header>
         <div id="container">
           <%- body %>
         </div>
@@ -31,9 +26,6 @@
 <% } else if(page.layout=='search'){ %>
 <%- partial('_partial/head') %>
     <body>
-      <header>
-        <%- partial('_partial/header') %>
-      </header>
       <div id="container">
         <%- partial('_partial/search')%>
       </div>
@@ -57,29 +49,23 @@
 <% } else if(page.layout=='categories'){ %>
  <%- partial('_partial/head') %>
     <body>
-      <header>
-        <%- partial('_partial/header') %>
-      </header>
-      <div id="archivecontainer">
+       <div id="categoriescontainer">
           <%- partial('_partial/categories')%>
       </div>
       <footer><%- partial('_partial/footer') %></footer>
       <%- partial('_partial/after_footer') %>
     </body>
    </html>
+
 <% } else if(page.category!=null||page.tag!=null||page.archive!=null) { %>
   <%- partial('_partial/head') %>
     <body>
-      <header>
-        <%- partial('_partial/header') %>
-      </header>
-      <div id="archivecontainer">
-        <%- body %>
-      </div>
+      <%- body %>
       <footer><%- partial('_partial/footer') %></footer>
       <%- partial('_partial/after_footer') %>
     </body>
    </html>
+   
 <% } else { %>
  <%- partial('_partial/head') %>
   <body>

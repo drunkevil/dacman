@@ -4,33 +4,11 @@
   <% if (page.layout=='photo' && item.photos && item.photos.length){ %>
     <%- partial('gallery') %>
   <% } %>
-	<article itemprop="articleBody"> 
-	
-	<div class="article-content">
-		<% if( table&&(item.toc !== false) && theme.toc.article){ %>
-		<div id="toc" class="toc-article">
-			<strong class="toc-title"><%= __('contents') %></strong>
-		<% if(item.list_number == false) {%>
-		<%- toc(item.content,{list_number:false}) %>
-		<% }else{ %>
-			<%- toc(item.content) %>
-		<% } %>
-		</div>
-		<% } %>
-		<%- item.content %>  
-	</div>
-		       
-	</article>
-	<%- partial('pagination') %>
-	<%- partial('comment') %>
-</div>  
- 
-<% } else{ %>
 
-<div id="main" class="<%= item.layout %>" itemscope itemprop="blogPost">
-  <% if (page.layout=='photo' && item.photos && item.photos.length){ %>
-    <%- partial('gallery') %>
-  <% } %>
+  <div id="header-name">闫志伟个人网志 <span id="site_location"> » <a href="http://drunkevil.org/" accesskey="1">首页</a></span><span id="site_archive"> » <a href="http://drunkevil.org/archives/">归档</a></span>  </div>
+
+
+
 	<article itemprop="articleBody"> 
 		<%- partial('header') %>
 	<div class="article-content">
@@ -46,11 +24,71 @@
 		<% } %>
 		<%- item.content %>  
 	</div>
-		<%- partial('footer') %>   	       
+		      
 	</article>
-	<%- partial('pagination') %>
-	<script type="text/javascript" id="wumiiRelatedItems"></script>
-	<%- partial('comment') %>
+</div>  
+ 
+<% } else{ %>
+
+<div id="main" class="<%= item.layout %>" itemscope itemprop="blogPost">
+  <% if (page.layout=='photo' && item.photos && item.photos.length){ %>
+    <%- partial('gallery') %>
+  <% } %>
+
+  <div id="header-name">闫志伟个人网志 <span id="site_location"> » <a href="http://drunkevil.org/" accesskey="1">首页</a></span><span id="site_about"> » <a href="http://drunkevil.org/about/">关于</a></span><span id="site_archive"> » <a href="http://drunkevil.org/archives/">归档</a></span>
+  </div>
+
+  <div class="asset-footer">
+		<ul>
+     		<% if (page.prev || page.next){ %>
+ 				<% if (page.prev){ %>
+ 			<li><strong>较新一篇：</strong> <a href="<%- config.root %><%- page.prev.path %>" title="<%= page.prev.title %>">
+  			  			<% if (page.prev.title){ %><%= page.prev.title %><% } else { %>(no title)<% } %>
+			</a></li>
+
+			<% } %>
+				<% if (page.next){ %>
+			<li><strong>较旧一篇：</strong> <a href="<%- config.root %><%- page.next.path %>"  title="<%= page.next.title %>">
+  			<% if (page.next.title){ %><%= page.next.title %><% } else { %>(no title)<% } %></a></li>
+			<% } %>
+			<% } %>
+		</ul>
+ </div>
+
+  
+	<article itemprop="articleBody"> 
+		<%- partial('header') %>
+	<div class="article-content">
+		<% if( table&&(item.toc !== false) && theme.toc.article){ %>
+		<div id="toc" class="toc-article">
+			<strong class="toc-title"><%= __('contents') %></strong>
+		<% if(item.list_number == false) {%>
+		<%- toc(item.content,{list_number:false}) %>
+		<% }else{ %>
+			<%- toc(item.content) %>
+		<% } %>
+		</div>
+		<% } %>
+		<%- item.content %>
+ 	
+ 	<p>（完）</p>
+
+ 	<div class="asset-footer">
+	<h4>文档信息</h4>
+		<ul>
+    		<li>版权声明： <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh" target="_blank">自由转载-非商用-非衍生-保持署名</a></li>
+    		<li>分类目录： <%- list_categories(item.categories, {
+      							show_count: false,
+     							style: 'none',
+     							separator: '►'
+  								}) %> </li>
+    		<li>更多内容： <a href="http://drunkevil.org/archives/" target="_blank"> 全部文章列表</a> </li>
+			</ul>
+</div>
+
+	</div>
+ 	       
+	</article>
 </div>  
    
   <% } %>

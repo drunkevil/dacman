@@ -5,18 +5,20 @@
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'your_google_analytics_ID', 'auto');
+  ga('create', 'UA-59108758-1', 'auto');
   ga('send', 'pageview');
 
 </script>
 <% } %>
 
-<script type="text/javascript">
-    var wumiiPermaLink = "<%- page.permalink %>"; //请用代码生成文章永久的链接
-    var wumiiTitle = "<%- page.title %>"; //请用代码生成文章标题
-    var wumiiSitePrefix = "http://drunkevil.com/";
-    var wumiiParams = "&num=5&mode=1&pf=JAVASCRIPT";
+<% if (theme.baidu_analytics.enable){ %>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?a71abe3dcf0a8063e887464cce786a55";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
 </script>
-<script type="text/javascript" src="http://widget.wumii.cn/ext/relatedItemsWidget"></script>
-
-
+<% } %>

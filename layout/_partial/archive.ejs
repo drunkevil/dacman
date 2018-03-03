@@ -1,41 +1,50 @@
 <%
-var title = '';
-var icon = '';
-if (page.category){
-  title = page.category;
-  icon = 'category';
-};
-if (page.tag){
-  title = page.tag;
-  icon = 'tag';
-};
-if (page.archive){
-  icon = 'archive';
-  if (page.year) title = page.year+  (page.month ? '/' + page.month : '');
-  else title = __('archive_a');
-};
+    var lastYear;
+    var lastMonth;
 %>
+<div id="archives" class="main-content-wrap">
 
-<div class="archive-title" >
-  <h2 class="<%= icon %>-icon"><%= title %></h2>
-  <% if(page.archive){ %>
-  <div class="archiveslist archive-float clearfix">
-   <%- list_archives({format:__('archive_date')}) %>
- </div>
-  <% } %>
-</div>
-<div id="main" class="archive-part clearfix">
-  <div id="archive-page">
-<% page.posts.each(function(item){ %>
-  <%- partial('_partial/article_row', {item: item, index: true}) %>
-<% }); %>
-<% if (page.total > 1){ %>
-  <nav id="page-nav" class="clearfix archive-nav">
-    <%- paginator({
-      prev_text: '<span></span>Prev',
-      next_text: 'Next<span></span>'
-    }) %>
-  </nav>
-<% } %>
+  <div id="header-name">闫志伟个人网志 <span id="site_location"> » <a href="http://drunkevil.org/" accesskey="1">首页</a></span><span id="site_about"> » <a href="http://drunkevil.org/about/">关于</a></span>
   </div>
+
+ <% if (is_archive()){ %>
+    <div id="page-title">
+      <p>所有文章（共<%= (site.posts.length) %>篇）</p>
+    </div>
+
+<%} else if (is_category()){%>
+    <div id="page-title">
+      <p>分类：<%= page.category %>（共<%= (page.posts.length) %>篇）</p>
+    </div>
+  <% } %>
+
+
+
+    <section class="boxes">
+        <% page.posts.sort('date', 'desc').each(function(post) { %>
+            <% var currentYear = post.date.year(); %>
+            <% var currentMonth = post.date.format('MM'); %>
+            <% if (lastYear != currentYear) { %>
+                <% if (lastYear != null) { %>
+                    </div>
+                    <% lastMonth = null; %>
+                <% } %>
+                <% lastYear = currentYear; %>
+                <div class="archive archive-year box" data-date="<%= post.date.year() %>">
+                    <h4 class="archive-title"><%= currentYear %>年</h4>
+            <% } %>
+            <% if (lastMonth != currentMonth) { %>
+                <% if (lastMonth != null) { %>
+                    </ul>
+                <% } %>
+                <ul class="archive-posts archive-month" data-date="<%= post.date.format('YYYYMM') %>">
+                    <h5 class="archive-title"><%= post.date.format('MM') %>月：</h5>
+                <% lastMonth = currentMonth; %>
+            <% } %>
+                <li class="archive-post archive-day" data-date="<%= post.date.format('YYYYMMDD') %>">
+                    <span class="archive-post-date"><%= post.date.format('YYYY-MM-DD').toLowerCase() %>：</span>
+                    <a class="archive-post-title" href="<%- url_for(post.path) %>"><%= post.title || '(no title)' %></a> 
+                </li>
+        <% }) %>
+    </section>
 </div>

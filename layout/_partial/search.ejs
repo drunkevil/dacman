@@ -1,10 +1,20 @@
 <% if(theme.swift_search.enable) { %>
-<div  id="container" class="page">
-  <div id="st-results-container" style="width:70%; margin:1.5em auto">正在加载搜索结果，请稍等。</div>
-  <style>.st-result-text {
+<div  id="container" class="page" style="max-width: 750px; margin: 2em auto">
+
+  <div id="header-name">drunkevil.com <span id="site_location"> » <a href="http://drunkevil.com/" accesskey="1">首页</a></span><span id="site_about"> » <a href="http://drunkevil.com/about/">关于</a></span><span id="site_archive"> » <a href="http://drunkevil.com/archives/">归档</a></span><span id="rss-icon"> <a href="/atom.xml" target="_blank" title="RSS"><img src="http://drunkevil.com/img/rss.png" /></a></span>
+  </div>
+
+  <div id="st-results-container" style="margin:3em auto">正在加载搜索结果，请稍等。</div>
+  <style>
+
+  div.swiftype div.st-result-listing div.st-search-summary h2 {
+    font-size: 1.3em!important;
+}
+
+  .st-result-text {
   background: #fafafa;
   display: block;
-  border-left: 0.5em solid #ccc;
+  border-left: 0.2em solid #ccc;
   -webkit-transition: border-left 0.45s;
   -moz-transition: border-left 0.45s;
   -o-transition: border-left 0.45s;

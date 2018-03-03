@@ -1,13 +1,20 @@
 <%
 page.category = ' ';
 %>
-<div class="archive-title" >
-<h2 class="category-icon"><%= __('categories') %></h2>
-<% site.categories.sort('name').each(function(item){ %>
-<a data-src="<%- config.root %><%- item.path %>" href="#<%= item.name %>" title="<%= item.name %>"><%= item.name %><sup><%= item.posts.length %></sup></a>
-<% }); %>
-</div>
-<div id="main" class="archive-part">
-<div class="all-list-box"></div>
+<div id="archives" class="main-content-wrap">
+
+	<div id="header-name">闫志伟个人网志 <span id="site_location"> » <a href="http://yanzhiwei.me/" accesskey="1">首页</a></span><span id="site_about"> » <a href="http://yanzhiwei.me/about/">关于</a></span><span id="site_archive"> » <a href="http://yanzhiwei.me/archives/">归档</a></span>
+  	</div>
+	<div class="categorieslist">
+
+	<p class="asidetitle"><%= __('categories') %><a href="http://drunkevil.com/archives/" target="_blank"></a></p>
+		<ul>
+		<% site.categories.sort('name').each(function(item){ %>
+		  <% if(item.posts.length){ %>
+			<li><a href="<%- config.root %><%- item.path %>" title="<%= item.name %>"><%= item.name %>(<%= (item.posts.length) %>)</a></li>
+		  <% } %>
+		<% }); %>
+		</ul>
+	</div>
 </div>
 

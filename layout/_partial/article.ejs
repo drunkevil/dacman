@@ -2,8 +2,9 @@
     <% if (page.layout=='photo' && item.photos && item.photos.length){ %>
       <%- partial('post/gallery') %>
     <% } %>
+
     <article class="post-expand <%= item.layout %>" itemprop="articleBody"> 
-        <%- partial('post/header') %>
+        <%- partial('post/header_index') %>
     <div class="article-content">
         <% if (item.excerpt && index){ %>
         <%- item.excerpt %>
@@ -19,6 +20,7 @@
     </div>
     <%- partial('post/footer', {index: true}) %>
     </article>
+
 <% }else{ %>
 <section class="post" itemscope itemprop="blogitem">
   <% if (item.link) { %> 

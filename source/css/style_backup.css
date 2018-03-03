@@ -178,6 +178,8 @@ input[type=text] {
 
 /* css3 animate */
 .animated {
+  margin-bottom: 0;
+  margin: 1.5em 3.5em 0 auto; 
   -webkit-animation-fill-mode: both;
   -moz-animation-fill-mode: both;
   -o-animation-fill-mode: both;
@@ -205,7 +207,7 @@ body >header {
 }
 body >header >div {
   width: 90%;
-  padding: 2em 1em 0 1em;
+  padding: 1em 1em 0 1em;
   margin: 0 auto;
   position: relative;
   overflow: hidden;
@@ -228,7 +230,7 @@ body >header a {
 
 @media only screen and (max-width: 767px) {
   #imglogo {
-  	margin: 0 autoï¼›
+  	margin: 0 auto；
   }
 }
 
@@ -258,8 +260,6 @@ body >header a {
 #textlogo {
   float: left;
   margin: 0;
-  width: 50%;
-  padding-bottom: 1em;
 }
 
 
@@ -273,14 +273,12 @@ body >header a {
 }
 @media only screen and (min-width: 768px) {
   #textlogo h1.site-name {
-    font-size: 150%;
-    color: #556677;
+    font-size: 240%;
   }
 }
 @media only screen and (min-width: 1024px) {
   #textlogo h1.site-name {
-    font-size: 150%;
-    color: #556677;
+    font-size: 280%;
   }
 }
 #textlogo h2.blog-motto {
@@ -322,6 +320,8 @@ header nav {
   header nav {
     float: right;
     width: auto;
+    margin-top: 1em;
+    max-height: 0.01em;
   }
 }
 @media only screen and (min-width: 1024px) {
@@ -421,17 +421,17 @@ header nav ul li a {
 }
 
 #main.post {
-  max-width: 850px;
+  max-width: 900px;
   margin: 2em auto 0 auto;
 }
 
 #main.page {
-  max-width: 850px;
-  margin: 2em auto 0 auto;
+  max-width: 750px;
+  margin-top: 2em;
 }
 
 #main.page article .article-content {
-    padding: 3.5em 0 2em 0;
+    padding: .5em 0 1em 0;
 }
 
 @media only screen and (min-width: 1024px) {
@@ -630,7 +630,6 @@ article header.article-info > h1 >a {
   padding: 0.2em 0;
   font-size: 100%;
   line-height: 1.5;
-  font-weight: 500;
   word-wrap: break-word;
   word-break: normal;
   -webkit-font-smoothing: antialiased;
@@ -784,7 +783,7 @@ article .article-content abbr {
 article .article-content blockquote {
     font-size: 90%;
     padding: 1em 3em 2em 4em;
-    margin: 1em;
+    margin: 2em;
     background-color: #f5f2f0;
     border-radius: 1em;
     font-family: Consolas, Monaco, 'Andale Mono', monospace;
@@ -882,9 +881,8 @@ article .article-content figure img {
   border-width: 0.2em;
   border-color: #e0dfcc;
   border-style: solid;
-  max-width: 90%;
+  max-width: 100%;
   display: block;
-  margin: 0 auto;
 }
 @media only screen and (min-width: 1024px) {
   article .article-content img,
@@ -1084,7 +1082,7 @@ footer.article-footer {
   font-family: Georgia, serif,sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  content: "è¯„è®º:";
+  content: "评论:";
   color: #7E5D5D;
 }
 
@@ -1791,7 +1789,7 @@ div.asset-footer{
 
 
 div.asset-footer{
-  margin-top:2em;
+  margin-top:3em;
   padding:0.5em;
   border:1px solid #d3d3d3;
   background-color:#DEEBF7;
@@ -1946,7 +1944,6 @@ h5.archive-title {
     -moz-border-radius: 10px;
     -webkit-border-radius: 10px;
     border-radius: 10px;
-    background: -webkit-gradient( linear, left top, left bottom, color-stop(0.05, #aad2f0), color-stop(1, #8bc1ed) );
 
 }
 

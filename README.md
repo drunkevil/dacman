@@ -2,7 +2,7 @@
 
 Dacman 是为 [Hexo](http://hexo.io) 设计的一款清新且具有响应式的主题，支持 Hexo 3.0 ，拥有更丰富的特性并支持了很多的国内服务，基于 [Jacman](https://github.com/wuchong/jacman) 修改而来。
 
-主题演示: [闫志伟的网络日志](http://drunkevil.com)
+主题演示: [闫志伟的网络日志](http://drunkevil.org)
 
 
 ##安装教程
